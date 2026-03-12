@@ -84,7 +84,7 @@ export function HeroSection() {
         >
           <div className="relative">
             <div className="absolute inset-0 bg-neon-green/20 blur-3xl scale-150" />
-            <img src={thinkEmoji} alt="$THINK" className="relative w-32 h-32 object-contain glow-pulse" />
+            <img src={thinkEmoji} alt="$THINK" className="relative w-52 h-52 object-contain glow-pulse" />
           </div>
         </motion.div>
       </div>
