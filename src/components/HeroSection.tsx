@@ -169,10 +169,18 @@ export function HeroSection() {
         <div className="absolute border border-neon-cyan/6 rounded-full" style={{ width: 330 * s, height: 330 * s }} />
         <div className="absolute border border-accent/6 rounded-full" style={{ width: 200 * s, height: 200 * s }} />
 
-        <OrbitRing items={outerOrbit} radius={320} scale={s} className="spin-orbit" counterClass="counter-spin" />
-        <OrbitRing items={middleOrbit} radius={240} scale={s} className="spin-orbit-reverse" counterClass="counter-spin-reverse" />
-        <OrbitRing items={innerOrbit} radius={165} scale={s} className="spin-orbit-inner" counterClass="counter-spin-inner" />
-        <OrbitRing items={microOrbit} radius={100} scale={s} className="spin-orbit-micro" counterClass="counter-spin-micro" />
+        <div className="orbit-tilt absolute flex items-center justify-center" style={{ width: 700 * s, height: 700 * s }}>
+          <OrbitRing items={outerOrbit} radius={320} scale={s} className="spin-orbit" counterClass="counter-spin" />
+        </div>
+        <div className="orbit-wobble absolute flex items-center justify-center" style={{ width: 700 * s, height: 700 * s }}>
+          <OrbitRing items={middleOrbit} radius={240} scale={s} className="spin-orbit-reverse" counterClass="counter-spin-reverse" />
+        </div>
+        <div className="orbit-breathe absolute flex items-center justify-center" style={{ width: 700 * s, height: 700 * s }}>
+          <OrbitRing items={innerOrbit} radius={165} scale={s} className="spin-orbit-inner" counterClass="counter-spin-inner" />
+        </div>
+        <div className="orbit-drift absolute flex items-center justify-center" style={{ width: 700 * s, height: 700 * s }}>
+          <OrbitRing items={microOrbit} radius={100} scale={s} className="spin-orbit-micro" counterClass="counter-spin-micro" />
+        </div>
 
         {/* Center emoji */}
         <motion.div
