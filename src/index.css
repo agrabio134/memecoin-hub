@@ -173,20 +173,20 @@
   animation: marquee 25s linear infinite;
 }
 
-/* Orbit 1: majestic slow spin + gentle tilt sway */
+/* Orbit 1: very slow, graceful spin + gentle tilt */
 .spin-orbit {
-  animation: spin-slow 38s linear infinite, tilt-sway 10s ease-in-out infinite;
+  animation: spin-slow 60s linear infinite, tilt-sway 14s ease-in-out infinite;
 }
 .counter-spin {
-  animation: spin-reverse 38s linear infinite, tilt-sway-reverse 10s ease-in-out infinite;
+  animation: spin-reverse 60s linear infinite, tilt-sway-reverse 14s ease-in-out infinite;
 }
 
-/* Orbit 2: reverse spin + elliptical wobble distortion */
+/* Orbit 2: slow reverse spin + elliptical wobble */
 .spin-orbit-reverse {
-  animation: spin-reverse 30s linear infinite, wobble-ellipse 7s ease-in-out infinite;
+  animation: spin-reverse 45s linear infinite, wobble-ellipse 9s ease-in-out infinite;
 }
 .counter-spin-reverse {
-  animation: spin-slow 30s linear infinite, wobble-ellipse-reverse 7s ease-in-out infinite;
+  animation: spin-slow 45s linear infinite, wobble-ellipse-reverse 9s ease-in-out infinite;
 }
 
 /* Orbit 3: faster spin + breathing pulse + subtle drift */
