@@ -3,8 +3,7 @@ import { Twitter, Send, BarChart3, ExternalLink } from "lucide-react";
 
 export function CommunitySection() {
   const links = [
-    { name: "Twitter / X", icon: <Twitter size={20} />, url: "https://twitter.com", desc: "Follow for alpha" },
-    { name: "Telegram", icon: <Send size={20} />, url: "https://t.me", desc: "Join the chat" },
+    { name: "Twitter / X", icon: <Twitter size={20} />, url: "https://x.com/i/communities/2032095188139585932", desc: "Follow for alpha" },
     { name: "Dexscreener", icon: <BarChart3 size={20} />, url: "https://dexscreener.com", desc: "Watch the chart" },
   ];
 
