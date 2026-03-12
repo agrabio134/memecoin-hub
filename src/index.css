@@ -146,6 +146,14 @@
   animation: spin-reverse 20s linear infinite;
 }
 
+.spin-orbit-micro {
+  animation: spin-reverse 15s linear infinite;
+}
+
+.counter-spin-micro {
+  animation: spin-slow 15s linear infinite;
+}
+
 .glow-pulse {
   animation: pulse-glow 3s ease-in-out infinite;
 }
