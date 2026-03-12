@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Zap } from "lucide-react";
+import { ChevronDown, Zap, Copy, Check } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import thinkEmoji from "@/assets/think-emoji.png";
 import orbitShib from "@/assets/orbit-shib.png";
