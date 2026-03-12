@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 
-const CONTRACT_ADDRESS = "Soon";
+const CONTRACT_ADDRESS = "EjUW3rz6HsPityrCqhkxYAsWA87Uz9xutqXh8uA4pump";
 
 export function HowToBuySection() {
   const [copied, setCopied] = useState(false);
