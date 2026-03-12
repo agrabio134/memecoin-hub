@@ -19,8 +19,8 @@ export function TokenomicsSection() {
           className="text-center mb-16"
         >
           <span className="text-primary text-xs font-mono uppercase tracking-[0.3em]">[ The Numbers ]</span>
-          <h2 className="text-5xl md:text-6xl font-heading font-extrabold mt-3 tracking-tighter">
-            Token<span className="text-primary">omics</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold mt-3 tracking-tighter">
+            Token<wbr /><span className="text-primary">omics</span>
           </h2>
         </motion.div>
 
