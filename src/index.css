@@ -173,36 +173,36 @@
   animation: marquee 25s linear infinite;
 }
 
-/* Orbit 1: slow steady spin */
+/* Orbit 1: majestic slow spin + gentle tilt sway */
 .spin-orbit {
-  animation: spin-slow 35s linear infinite;
+  animation: spin-slow 38s linear infinite, tilt-sway 10s ease-in-out infinite;
 }
 .counter-spin {
-  animation: spin-reverse 35s linear infinite;
+  animation: spin-reverse 38s linear infinite, tilt-sway-reverse 10s ease-in-out infinite;
 }
 
-/* Orbit 2: reverse with elliptical wobble */
+/* Orbit 2: reverse spin + elliptical wobble distortion */
 .spin-orbit-reverse {
-  animation: spin-reverse 28s linear infinite, wobble-x 8s ease-in-out infinite;
+  animation: spin-reverse 30s linear infinite, wobble-ellipse 7s ease-in-out infinite;
 }
 .counter-spin-reverse {
-  animation: spin-slow 28s linear infinite, wobble-x-reverse 8s ease-in-out infinite;
+  animation: spin-slow 30s linear infinite, wobble-ellipse-reverse 7s ease-in-out infinite;
 }
 
-/* Orbit 3: faster with breathing scale */
+/* Orbit 3: faster spin + breathing pulse + subtle drift */
 .spin-orbit-inner {
-  animation: spin-slow 18s linear infinite, breathe 6s ease-in-out infinite;
+  animation: spin-slow 20s linear infinite, breathe 5s ease-in-out infinite, drift-orbit 12s ease-in-out infinite;
 }
 .counter-spin-inner {
-  animation: spin-reverse 18s linear infinite;
+  animation: spin-reverse 20s linear infinite, breathe-small 5s ease-in-out infinite;
 }
 
-/* Orbit 4: fast reverse with drift */
+/* Orbit 4: fastest reverse + organic drifting path */
 .spin-orbit-micro {
-  animation: spin-reverse 12s linear infinite, drift-y 5s ease-in-out infinite;
+  animation: spin-reverse 14s linear infinite, drift-orbit 8s ease-in-out infinite, wobble-ellipse 6s ease-in-out infinite;
 }
 .counter-spin-micro {
-  animation: spin-slow 12s linear infinite, drift-y-reverse 5s ease-in-out infinite;
+  animation: spin-slow 14s linear infinite, drift-orbit-reverse 8s ease-in-out infinite, wobble-ellipse-reverse 6s ease-in-out infinite;
 }
 
 .glow-pulse {
