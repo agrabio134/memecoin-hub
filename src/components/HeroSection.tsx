@@ -16,49 +16,49 @@ import orbitCrying from "@/assets/orbit-crying.png";
 type OrbitItem = { name: string; image?: string; emoji?: string; size: number };
 
 const outerOrbit: OrbitItem[] = [
-  { name: "SHIB", image: orbitShib, size: 52 },
-  { name: "😂", emoji: "😂", size: 40 },
-  { name: "FOREST", image: orbitForest, size: 44 },
-  { name: "🤣", emoji: "🤣", size: 36 },
-  { name: "FIGHT", image: orbitFight, size: 56 },
-  { name: "😭", emoji: "😭", size: 44 },
-  { name: "TURTLE", image: orbitTurtle, size: 40 },
-  { name: "💀", emoji: "💀", size: 48 },
-  { name: "DOGE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/5slq9p38_Doge-Meme-PNG-Free-Download.png", size: 52 },
-  { name: "🫠", emoji: "🫠", size: 36 },
-  { name: "PEPE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/bxzig1oh_png-clipart-discord-pepe-the-frog-video-games-pepe-removebg-preview.png", size: 48 },
-  { name: "😤", emoji: "😤", size: 40 },
+  { name: "SHIB", image: orbitShib, size: 58 },
+  { name: "😂", emoji: "😂", size: 28 },
+  { name: "FOREST", image: orbitForest, size: 42 },
+  { name: "🤣", emoji: "🤣", size: 50 },
+  { name: "FIGHT", image: orbitFight, size: 62 },
+  { name: "😭", emoji: "😭", size: 32 },
+  { name: "TURTLE", image: orbitTurtle, size: 38 },
+  { name: "💀", emoji: "💀", size: 54 },
+  { name: "DOGE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/5slq9p38_Doge-Meme-PNG-Free-Download.png", size: 50 },
+  { name: "🫠", emoji: "🫠", size: 26 },
+  { name: "PEPE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/bxzig1oh_png-clipart-discord-pepe-the-frog-video-games-pepe-removebg-preview.png", size: 54 },
+  { name: "😤", emoji: "😤", size: 44 },
 ];
 
 const middleOrbit: OrbitItem[] = [
-  { name: "APE", image: orbitApe, size: 48 },
-  { name: "🔥", emoji: "🔥", size: 34 },
-  { name: "PENGUIN", image: orbitPenguin, size: 40 },
-  { name: "😈", emoji: "😈", size: 44 },
-  { name: "BLOB", image: orbitBlob, size: 52 },
-  { name: "🚀", emoji: "🚀", size: 38 },
-  { name: "CRY", image: orbitCrying, size: 44 },
-  { name: "🤡", emoji: "🤡", size: 36 },
-  { name: "BONK", image: orbitBonk, size: 36 },
-  { name: "💎", emoji: "💎", size: 42 },
+  { name: "APE", image: orbitApe, size: 52 },
+  { name: "🔥", emoji: "🔥", size: 24 },
+  { name: "PENGUIN", image: orbitPenguin, size: 44 },
+  { name: "😈", emoji: "😈", size: 48 },
+  { name: "BLOB", image: orbitBlob, size: 56 },
+  { name: "🚀", emoji: "🚀", size: 30 },
+  { name: "CRY", image: orbitCrying, size: 40 },
+  { name: "🤡", emoji: "🤡", size: 46 },
+  { name: "BONK", image: orbitBonk, size: 34 },
+  { name: "💎", emoji: "💎", size: 28 },
 ];
 
 const innerOrbit: OrbitItem[] = [
-  { name: "FAP", image: orbitFap, size: 44 },
-  { name: "🧠", emoji: "🧠", size: 38 },
-  { name: "SHIB2", image: orbitShib, size: 36 },
-  { name: "😵‍💫", emoji: "😵‍💫", size: 44 },
-  { name: "FIGHT2", image: orbitFight, size: 40 },
-  { name: "🤯", emoji: "🤯", size: 36 },
-  { name: "🐸", emoji: "🐸", size: 40 },
+  { name: "FAP", image: orbitFap, size: 48 },
+  { name: "🧠", emoji: "🧠", size: 26 },
+  { name: "SHIB2", image: orbitShib, size: 38 },
+  { name: "😵‍💫", emoji: "😵‍💫", size: 42 },
+  { name: "FIGHT2", image: orbitFight, size: 44 },
+  { name: "🤯", emoji: "🤯", size: 30 },
+  { name: "🐸", emoji: "🐸", size: 50 },
 ];
 
 const microOrbit: OrbitItem[] = [
-  { name: "😎", emoji: "😎", size: 32 },
-  { name: "APE2", image: orbitApe, size: 34 },
-  { name: "🤑", emoji: "🤑", size: 36 },
-  { name: "💩", emoji: "💩", size: 30 },
-  { name: "BLOB2", image: orbitBlob, size: 32 },
+  { name: "😎", emoji: "😎", size: 36 },
+  { name: "APE2", image: orbitApe, size: 28 },
+  { name: "🤑", emoji: "🤑", size: 42 },
+  { name: "💩", emoji: "💩", size: 24 },
+  { name: "BLOB2", image: orbitBlob, size: 34 },
 ];
 
 function OrbitRing({
