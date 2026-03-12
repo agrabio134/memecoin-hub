@@ -128,24 +128,12 @@ function OrbitRing({
   );
 }
 
-const CA_ADDRESS = "EjUW3rz6HsPityrCqhkxYAsWA87Uz9xutqXh8uA4pump";
-
 function CopyCA() {
-  const [copied, setCopied] = useState(false);
-  const handleCopy = () => {
-    navigator.clipboard.writeText(CA_ADDRESS);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
   return (
-    <button
-      onClick={handleCopy}
-      className="inline-flex items-center gap-2 px-4 py-2 mb-4 border border-border bg-surface-card hover:border-primary/40 transition-colors font-mono text-xs text-muted-foreground hover:text-primary cursor-pointer"
-    >
+    <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 border border-border bg-surface-card font-mono text-xs text-muted-foreground">
       <span className="text-primary font-bold">CA:</span>
-      <span className="truncate max-w-[180px] md:max-w-none">{CA_ADDRESS}</span>
-      {copied ? <Check size={14} className="text-primary shrink-0" /> : <Copy size={14} className="shrink-0" />}
-    </button>
+      <span className="text-muted-foreground/70 uppercase tracking-widest">Soon</span>
+    </div>
   );
 }
 
