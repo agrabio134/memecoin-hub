@@ -110,99 +110,74 @@
   100% { transform: translateY(40px); }
 }
 
-@keyframes wobble-ellipse {
-  0%, 100% { transform: scaleX(1) scaleY(1) rotate(0deg); }
-  25% { transform: scaleX(1.06) scaleY(0.95) rotate(0.5deg); }
-  50% { transform: scaleX(0.96) scaleY(1.05) rotate(-0.5deg); }
-  75% { transform: scaleX(1.04) scaleY(0.97) rotate(0.3deg); }
+/* Orbit 1: very slow graceful spin */
+.spin-orbit {
+  animation: spin-slow 55s linear infinite;
+}
+.counter-spin {
+  animation: spin-reverse 55s linear infinite;
 }
 
-@keyframes wobble-ellipse-reverse {
-  0%, 100% { transform: scaleX(1) scaleY(1) rotate(0deg); }
-  25% { transform: scaleX(0.95) scaleY(1.04) rotate(-0.4deg); }
-  50% { transform: scaleX(1.05) scaleY(0.96) rotate(0.4deg); }
-  75% { transform: scaleX(0.97) scaleY(1.03) rotate(-0.3deg); }
+/* Orbit 2: medium reverse spin */
+.spin-orbit-reverse {
+  animation: spin-reverse 40s linear infinite;
+}
+.counter-spin-reverse {
+  animation: spin-slow 40s linear infinite;
+}
+
+/* Orbit 3: moderate speed spin */
+.spin-orbit-inner {
+  animation: spin-slow 22s linear infinite;
+}
+.counter-spin-inner {
+  animation: spin-reverse 22s linear infinite;
+}
+
+/* Orbit 4: fast reverse spin */
+.spin-orbit-micro {
+  animation: spin-reverse 14s linear infinite;
+}
+.counter-spin-micro {
+  animation: spin-slow 14s linear infinite;
+}
+
+/* Secondary motion wrappers — applied to parent wrapper divs */
+.orbit-wobble {
+  animation: wobble-ellipse 8s ease-in-out infinite;
+}
+.orbit-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+.orbit-drift {
+  animation: drift-orbit 10s ease-in-out infinite;
+}
+.orbit-tilt {
+  animation: tilt-sway 12s ease-in-out infinite;
+}
+
+@keyframes wobble-ellipse {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  25% { transform: scaleX(1.05) scaleY(0.96); }
+  75% { transform: scaleX(0.96) scaleY(1.04); }
 }
 
 @keyframes breathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.07); }
-}
-
-@keyframes breathe-small {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(0.94); }
+  50% { transform: scale(1.06); }
 }
 
 @keyframes drift-orbit {
-  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
-  20% { transform: translateY(-8px) translateX(5px) rotate(0.5deg); }
-  40% { transform: translateY(4px) translateX(-6px) rotate(-0.3deg); }
-  60% { transform: translateY(-3px) translateX(8px) rotate(0.4deg); }
-  80% { transform: translateY(7px) translateX(-4px) rotate(-0.5deg); }
-}
-
-@keyframes drift-orbit-reverse {
-  0%, 100% { transform: translateY(0) translateX(0); }
-  25% { transform: translateY(5px) translateX(-3px); }
-  50% { transform: translateY(-6px) translateX(4px); }
-  75% { transform: translateY(3px) translateX(-5px); }
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(6px, -4px); }
+  50% { transform: translate(-4px, 6px); }
+  75% { transform: translate(5px, 3px); }
 }
 
 @keyframes tilt-sway {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  33% { transform: rotate(1.5deg) scale(1.02); }
-  66% { transform: rotate(-1.5deg) scale(0.98); }
-}
-
-@keyframes tilt-sway-reverse {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  33% { transform: rotate(-1deg) scale(0.98); }
-  66% { transform: rotate(1deg) scale(1.02); }
-}
-
-@keyframes glitch-1 {
-  0%, 100% { clip-path: inset(0 0 95% 0); transform: translateX(0); }
-  20% { clip-path: inset(30% 0 40% 0); transform: translateX(-3px); }
-  40% { clip-path: inset(60% 0 10% 0); transform: translateX(3px); }
-  60% { clip-path: inset(10% 0 70% 0); transform: translateX(-2px); }
-  80% { clip-path: inset(80% 0 5% 0); transform: translateX(2px); }
-}
-
-.marquee-track {
-  animation: marquee 25s linear infinite;
-}
-
-/* Orbit 1: very slow, graceful spin + gentle tilt */
-.spin-orbit {
-  animation: spin-slow 60s linear infinite, tilt-sway 14s ease-in-out infinite;
-}
-.counter-spin {
-  animation: spin-reverse 60s linear infinite, tilt-sway-reverse 14s ease-in-out infinite;
-}
-
-/* Orbit 2: slow reverse spin + elliptical wobble */
-.spin-orbit-reverse {
-  animation: spin-reverse 45s linear infinite, wobble-ellipse 9s ease-in-out infinite;
-}
-.counter-spin-reverse {
-  animation: spin-slow 45s linear infinite, wobble-ellipse-reverse 9s ease-in-out infinite;
-}
-
-/* Orbit 3: faster spin + breathing pulse + subtle drift */
-.spin-orbit-inner {
-  animation: spin-slow 20s linear infinite, breathe 5s ease-in-out infinite, drift-orbit 12s ease-in-out infinite;
-}
-.counter-spin-inner {
-  animation: spin-reverse 20s linear infinite, breathe-small 5s ease-in-out infinite;
-}
-
-/* Orbit 4: fastest reverse + organic drifting path */
-.spin-orbit-micro {
-  animation: spin-reverse 14s linear infinite, drift-orbit 8s ease-in-out infinite, wobble-ellipse 6s ease-in-out infinite;
-}
-.counter-spin-micro {
-  animation: spin-slow 14s linear infinite, drift-orbit-reverse 8s ease-in-out infinite, wobble-ellipse-reverse 6s ease-in-out infinite;
+  0%, 100% { transform: rotate(0deg); }
+  33% { transform: rotate(1.2deg); }
+  66% { transform: rotate(-1.2deg); }
 }
 
 .glow-pulse {
