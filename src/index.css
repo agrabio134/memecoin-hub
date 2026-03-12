@@ -110,74 +110,88 @@
   100% { transform: translateY(40px); }
 }
 
-/* Orbit 1: very slow graceful spin */
+/* Orbit 1: ultra slow, barely rotating — majestic float */
 .spin-orbit {
-  animation: spin-slow 55s linear infinite;
+  animation: spin-slow 120s linear infinite;
 }
 .counter-spin {
-  animation: spin-reverse 55s linear infinite;
+  animation: spin-reverse 120s linear infinite;
 }
 
-/* Orbit 2: medium reverse spin */
+/* Orbit 2: no spin — gentle pendulum sway instead */
 .spin-orbit-reverse {
-  animation: spin-reverse 40s linear infinite;
+  animation: pendulum 12s ease-in-out infinite;
 }
 .counter-spin-reverse {
-  animation: spin-slow 40s linear infinite;
+  animation: none;
 }
 
-/* Orbit 3: moderate speed spin */
+/* Orbit 3: very slow reverse spin */
 .spin-orbit-inner {
-  animation: spin-slow 22s linear infinite;
+  animation: spin-reverse 80s linear infinite;
 }
 .counter-spin-inner {
-  animation: spin-reverse 22s linear infinite;
+  animation: spin-slow 80s linear infinite;
 }
 
-/* Orbit 4: fast reverse spin */
+/* Orbit 4: no spin — organic floating drift */
 .spin-orbit-micro {
-  animation: spin-reverse 14s linear infinite;
+  animation: float-path 16s ease-in-out infinite;
 }
 .counter-spin-micro {
-  animation: spin-slow 14s linear infinite;
+  animation: none;
 }
 
-/* Secondary motion wrappers — applied to parent wrapper divs */
+/* Secondary motion wrappers */
+.orbit-tilt {
+  animation: tilt-sway 14s ease-in-out infinite;
+}
 .orbit-wobble {
-  animation: wobble-ellipse 8s ease-in-out infinite;
+  animation: wobble-ellipse 10s ease-in-out infinite;
 }
 .orbit-breathe {
-  animation: breathe 6s ease-in-out infinite;
+  animation: breathe 8s ease-in-out infinite;
 }
 .orbit-drift {
-  animation: drift-orbit 10s ease-in-out infinite;
+  animation: drift-orbit 12s ease-in-out infinite;
 }
-.orbit-tilt {
-  animation: tilt-sway 12s ease-in-out infinite;
+
+@keyframes pendulum {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(8deg); }
+  75% { transform: rotate(-8deg); }
+}
+
+@keyframes float-path {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(4px, -6px) rotate(2deg); }
+  40% { transform: translate(-5px, 3px) rotate(-3deg); }
+  60% { transform: translate(6px, 5px) rotate(1deg); }
+  80% { transform: translate(-3px, -4px) rotate(-2deg); }
 }
 
 @keyframes wobble-ellipse {
   0%, 100% { transform: scaleX(1) scaleY(1); }
-  25% { transform: scaleX(1.05) scaleY(0.96); }
-  75% { transform: scaleX(0.96) scaleY(1.04); }
+  25% { transform: scaleX(1.04) scaleY(0.97); }
+  75% { transform: scaleX(0.97) scaleY(1.03); }
 }
 
 @keyframes breathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+  50% { transform: scale(1.05); }
 }
 
 @keyframes drift-orbit {
   0%, 100% { transform: translate(0, 0); }
-  25% { transform: translate(6px, -4px); }
-  50% { transform: translate(-4px, 6px); }
-  75% { transform: translate(5px, 3px); }
+  25% { transform: translate(5px, -3px); }
+  50% { transform: translate(-3px, 5px); }
+  75% { transform: translate(4px, 2px); }
 }
 
 @keyframes tilt-sway {
   0%, 100% { transform: rotate(0deg); }
-  33% { transform: rotate(1.2deg); }
-  66% { transform: rotate(-1.2deg); }
+  33% { transform: rotate(1deg); }
+  66% { transform: rotate(-1deg); }
 }
 
 .glow-pulse {
