@@ -12,37 +12,107 @@ import orbitPenguin from "@/assets/orbit-penguin.png";
 import orbitBlob from "@/assets/orbit-blob.png";
 import orbitCrying from "@/assets/orbit-crying.png";
 
-const outerOrbit = [
-  { name: "SHIB", image: orbitShib },
-  { name: "FOREST", image: orbitForest },
-  { name: "FIGHT", image: orbitFight },
-  { name: "TURTLE", image: orbitTurtle },
-  { name: "FAP", image: orbitFap },
-  { name: "BONK2", image: orbitBonk },
-  { name: "BLOB", image: orbitBlob },
-  { name: "CRY", image: orbitCrying },
-  { name: "DOGE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/5slq9p38_Doge-Meme-PNG-Free-Download.png" },
-  { name: "PEPE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/bxzig1oh_png-clipart-discord-pepe-the-frog-video-games-pepe-removebg-preview.png" },
+type OrbitItem = { name: string; image?: string; emoji?: string; size: number };
+
+const outerOrbit: OrbitItem[] = [
+  { name: "SHIB", image: orbitShib, size: 52 },
+  { name: "😂", emoji: "😂", size: 40 },
+  { name: "FOREST", image: orbitForest, size: 44 },
+  { name: "🤣", emoji: "🤣", size: 36 },
+  { name: "FIGHT", image: orbitFight, size: 56 },
+  { name: "😭", emoji: "😭", size: 44 },
+  { name: "TURTLE", image: orbitTurtle, size: 40 },
+  { name: "💀", emoji: "💀", size: 48 },
+  { name: "DOGE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/5slq9p38_Doge-Meme-PNG-Free-Download.png", size: 52 },
+  { name: "🫠", emoji: "🫠", size: 36 },
+  { name: "PEPE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/bxzig1oh_png-clipart-discord-pepe-the-frog-video-games-pepe-removebg-preview.png", size: 48 },
+  { name: "😤", emoji: "😤", size: 40 },
 ];
 
-const middleOrbit = [
-  { name: "APE", image: orbitApe },
-  { name: "PENGUIN", image: orbitPenguin },
-  { name: "SHIB2", image: orbitShib },
-  { name: "BLOB2", image: orbitBlob },
-  { name: "FIGHT2", image: orbitFight },
-  { name: "CRY2", image: orbitCrying },
-  { name: "BONK3", image: orbitBonk },
-  { name: "FAP2", image: orbitFap },
+const middleOrbit: OrbitItem[] = [
+  { name: "APE", image: orbitApe, size: 48 },
+  { name: "🔥", emoji: "🔥", size: 34 },
+  { name: "PENGUIN", image: orbitPenguin, size: 40 },
+  { name: "😈", emoji: "😈", size: 44 },
+  { name: "BLOB", image: orbitBlob, size: 52 },
+  { name: "🚀", emoji: "🚀", size: 38 },
+  { name: "CRY", image: orbitCrying, size: 44 },
+  { name: "🤡", emoji: "🤡", size: 36 },
+  { name: "BONK", image: orbitBonk, size: 36 },
+  { name: "💎", emoji: "💎", size: 42 },
 ];
 
-const innerOrbit = [
-  { name: "TURTLE2", image: orbitTurtle },
-  { name: "FOREST2", image: orbitForest },
-  { name: "APE2", image: orbitApe },
-  { name: "PENGUIN2", image: orbitPenguin },
-  { name: "BLOB3", image: orbitBlob },
+const innerOrbit: OrbitItem[] = [
+  { name: "FAP", image: orbitFap, size: 44 },
+  { name: "🧠", emoji: "🧠", size: 38 },
+  { name: "SHIB2", image: orbitShib, size: 36 },
+  { name: "😵‍💫", emoji: "😵‍💫", size: 44 },
+  { name: "FIGHT2", image: orbitFight, size: 40 },
+  { name: "🤯", emoji: "🤯", size: 36 },
+  { name: "🐸", emoji: "🐸", size: 40 },
 ];
+
+const microOrbit: OrbitItem[] = [
+  { name: "😎", emoji: "😎", size: 32 },
+  { name: "APE2", image: orbitApe, size: 34 },
+  { name: "🤑", emoji: "🤑", size: 36 },
+  { name: "💩", emoji: "💩", size: 30 },
+  { name: "BLOB2", image: orbitBlob, size: 32 },
+];
+
+function OrbitRing({
+  items,
+  radius,
+  className,
+  counterClass,
+}: {
+  items: OrbitItem[];
+  radius: number;
+  className: string;
+  counterClass: string;
+}) {
+  return (
+    <div className={`${className} absolute`} style={{ width: radius * 2, height: radius * 2 }}>
+      {items.map((item, i) => {
+        const angle = (i / items.length) * 360;
+        return (
+          <div
+            key={item.name}
+            className="absolute"
+            style={{
+              top: "50%",
+              left: "50%",
+              transform: `rotate(${angle}deg) translateX(${radius}px) translateY(-50%)`,
+              transformOrigin: "0 0",
+            }}
+          >
+            <div className={counterClass}>
+              {item.emoji ? (
+                <span
+                  className="block select-none"
+                  style={{ fontSize: item.size * 0.7, lineHeight: 1 }}
+                >
+                  {item.emoji}
+                </span>
+              ) : (
+                <div
+                  className="rounded-full border border-border/50 bg-surface-card p-0.5 hover:border-primary/50 transition-colors overflow-hidden"
+                  style={{ width: item.size, height: item.size }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -54,86 +124,17 @@ export function HeroSection() {
       </div>
 
       {/* Orbit system */}
-      <div className="relative w-[600px] h-[600px] max-w-[95vw] flex items-center justify-center">
-        {/* Orbit rings */}
-        <div className="absolute w-[540px] h-[540px] border border-border/20" style={{ clipPath: "polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)" }} />
-        <div className="absolute w-[390px] h-[390px] border border-neon-green/10" style={{ clipPath: "polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)" }} />
-        <div className="absolute w-[260px] h-[260px] border border-neon-cyan/10" style={{ clipPath: "polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)" }} />
+      <div className="relative w-[650px] h-[650px] max-w-[95vw] flex items-center justify-center">
+        {/* Orbit ring guides */}
+        <div className="absolute w-[600px] h-[600px] border border-border/15 rounded-full" />
+        <div className="absolute w-[440px] h-[440px] border border-neon-green/8 rounded-full" />
+        <div className="absolute w-[300px] h-[300px] border border-neon-cyan/8 rounded-full" />
+        <div className="absolute w-[180px] h-[180px] border border-accent/8 rounded-full" />
 
-        {/* Outer orbit tokens (10 items) */}
-        <div className="spin-orbit absolute w-[540px] h-[540px]">
-          {outerOrbit.map((meme, i) => {
-            const angle = (i / outerOrbit.length) * 360;
-            return (
-              <div
-                key={meme.name}
-                className="absolute"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: `rotate(${angle}deg) translateX(270px) translateY(-50%)`,
-                  transformOrigin: "0 0",
-                }}
-              >
-                <div className="counter-spin">
-                  <div className="w-11 h-11 rounded-full border border-border/50 bg-surface-card p-0.5 hover:border-primary/50 transition-colors overflow-hidden">
-                    <img src={meme.image} alt={meme.name} className="w-full h-full object-cover rounded-full" />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Middle orbit tokens (8 items) */}
-        <div className="spin-orbit-reverse absolute w-[390px] h-[390px]">
-          {middleOrbit.map((meme, i) => {
-            const angle = (i / middleOrbit.length) * 360;
-            return (
-              <div
-                key={meme.name}
-                className="absolute"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: `rotate(${angle}deg) translateX(195px) translateY(-50%)`,
-                  transformOrigin: "0 0",
-                }}
-              >
-                <div className="counter-spin-reverse">
-                  <div className="w-9 h-9 rounded-full border border-border/30 bg-surface-card p-0.5 hover:border-neon-cyan/50 transition-colors overflow-hidden">
-                    <img src={meme.image} alt={meme.name} className="w-full h-full object-cover rounded-full" />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Inner orbit tokens (5 items) */}
-        <div className="spin-orbit-inner absolute w-[260px] h-[260px]">
-          {innerOrbit.map((meme, i) => {
-            const angle = (i / innerOrbit.length) * 360;
-            return (
-              <div
-                key={meme.name}
-                className="absolute"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: `rotate(${angle}deg) translateX(130px) translateY(-50%)`,
-                  transformOrigin: "0 0",
-                }}
-              >
-                <div className="counter-spin-inner">
-                  <div className="w-8 h-8 rounded-full border border-border/20 bg-surface-card p-0.5 hover:border-accent/50 transition-colors overflow-hidden">
-                    <img src={meme.image} alt={meme.name} className="w-full h-full object-cover rounded-full" />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <OrbitRing items={outerOrbit} radius={300} className="spin-orbit" counterClass="counter-spin" />
+        <OrbitRing items={middleOrbit} radius={220} className="spin-orbit-reverse" counterClass="counter-spin-reverse" />
+        <OrbitRing items={innerOrbit} radius={150} className="spin-orbit-inner" counterClass="counter-spin-inner" />
+        <OrbitRing items={microOrbit} radius={90} className="spin-orbit-micro" counterClass="counter-spin-micro" />
 
         {/* Center emoji */}
         <motion.div
@@ -143,7 +144,7 @@ export function HeroSection() {
         >
           <div className="relative">
             <div className="absolute inset-0 bg-neon-green/20 blur-3xl scale-150" />
-            <img src={thinkEmoji} alt="$THINK" className="relative w-52 h-52 object-contain glow-pulse" />
+            <img src={thinkEmoji} alt="$THINK" className="relative w-44 h-44 object-contain glow-pulse" />
           </div>
         </motion.div>
       </div>
