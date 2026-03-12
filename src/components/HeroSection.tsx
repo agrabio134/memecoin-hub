@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Zap } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import thinkEmoji from "@/assets/think-emoji.png";
 import orbitShib from "@/assets/orbit-shib.png";
 import orbitForest from "@/assets/orbit-forest.png";
