@@ -120,6 +120,9 @@ function OrbitRing({
 }
 
 export function HeroSection() {
+  const isMobile = useIsMobile();
+  const s = isMobile ? 0.55 : 1;
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg scanlines pt-20">
       {/* Background glows */}
@@ -129,17 +132,17 @@ export function HeroSection() {
       </div>
 
       {/* Orbit system */}
-      <div className="relative w-[650px] h-[650px] max-w-[95vw] flex items-center justify-center">
+      <div className="relative flex items-center justify-center" style={{ width: 650 * s, height: 650 * s }}>
         {/* Orbit ring guides */}
-        <div className="absolute w-[600px] h-[600px] border border-border/15 rounded-full" />
-        <div className="absolute w-[440px] h-[440px] border border-neon-green/8 rounded-full" />
-        <div className="absolute w-[300px] h-[300px] border border-neon-cyan/8 rounded-full" />
-        <div className="absolute w-[180px] h-[180px] border border-accent/8 rounded-full" />
+        <div className="absolute border border-border/15 rounded-full" style={{ width: 600 * s, height: 600 * s }} />
+        <div className="absolute border border-neon-green/8 rounded-full" style={{ width: 440 * s, height: 440 * s }} />
+        <div className="absolute border border-neon-cyan/8 rounded-full" style={{ width: 300 * s, height: 300 * s }} />
+        <div className="absolute border border-accent/8 rounded-full" style={{ width: 180 * s, height: 180 * s }} />
 
-        <OrbitRing items={outerOrbit} radius={300} className="spin-orbit" counterClass="counter-spin" />
-        <OrbitRing items={middleOrbit} radius={220} className="spin-orbit-reverse" counterClass="counter-spin-reverse" />
-        <OrbitRing items={innerOrbit} radius={150} className="spin-orbit-inner" counterClass="counter-spin-inner" />
-        <OrbitRing items={microOrbit} radius={90} className="spin-orbit-micro" counterClass="counter-spin-micro" />
+        <OrbitRing items={outerOrbit} radius={300} scale={s} className="spin-orbit" counterClass="counter-spin" />
+        <OrbitRing items={middleOrbit} radius={220} scale={s} className="spin-orbit-reverse" counterClass="counter-spin-reverse" />
+        <OrbitRing items={innerOrbit} radius={150} scale={s} className="spin-orbit-inner" counterClass="counter-spin-inner" />
+        <OrbitRing items={microOrbit} radius={90} scale={s} className="spin-orbit-micro" counterClass="counter-spin-micro" />
 
         {/* Center emoji */}
         <motion.div
