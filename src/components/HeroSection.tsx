@@ -129,11 +129,24 @@ function OrbitRing({
 }
 
 function CopyCA() {
+  const [copied, setCopied] = useState(false);
+  const ca = "EjUW3rz6HsPityrCqhkxYAsWA87Uz9xutqXh8uA4pump";
+
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(ca); } catch {}
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
-    <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 border border-border bg-surface-card font-mono text-xs text-muted-foreground">
+    <button
+      onClick={copy}
+      className="inline-flex items-center gap-2 px-4 py-2 mb-4 border border-border bg-surface-card font-mono text-xs text-muted-foreground hover:border-primary/40 transition-colors cursor-pointer"
+    >
       <span className="text-primary font-bold">CA:</span>
-      <span className="text-muted-foreground/70 uppercase tracking-widest">Soon</span>
-    </div>
+      <span className="text-muted-foreground/70 tracking-wide">{ca.slice(0, 6)}...{ca.slice(-4)}</span>
+      {copied ? <Check size={12} className="text-primary" /> : <Copy size={12} />}
+    </button>
   );
 }
 
