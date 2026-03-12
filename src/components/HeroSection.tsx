@@ -68,8 +68,8 @@ export function HeroSection() {
 
         {/* Inner orbit tokens */}
         <div className="spin-orbit-reverse absolute w-[300px] h-[300px]">
-          {memeTokens.slice(4).map((meme, i) => {
-            const angle = (i / 2) * 360;
+          {innerOrbit.map((meme, i) => {
+            const angle = (i / innerOrbit.length) * 360;
             return (
               <div
                 key={meme.name}
@@ -82,8 +82,8 @@ export function HeroSection() {
                 }}
               >
                 <div className="counter-spin-reverse">
-                  <div className="w-9 h-9 border border-border/30 bg-surface-card p-1 hover:border-neon-cyan/50 transition-colors">
-                    <img src={meme.image} alt={meme.name} className="w-full h-full object-contain" />
+                  <div className="w-9 h-9 rounded-full border border-border/30 bg-surface-card p-0.5 hover:border-neon-cyan/50 transition-colors overflow-hidden">
+                    <img src={meme.image} alt={meme.name} className="w-full h-full object-cover rounded-full" />
                   </div>
                 </div>
               </div>
