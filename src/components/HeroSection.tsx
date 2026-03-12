@@ -66,16 +66,20 @@ function OrbitRing({
   radius,
   className,
   counterClass,
+  scale = 1,
 }: {
   items: OrbitItem[];
   radius: number;
   className: string;
   counterClass: string;
+  scale?: number;
 }) {
+  const r = radius * scale;
   return (
-    <div className={`${className} absolute`} style={{ width: radius * 2, height: radius * 2 }}>
+    <div className={`${className} absolute`} style={{ width: r * 2, height: r * 2 }}>
       {items.map((item, i) => {
         const angle = (i / items.length) * 360;
+        const s = item.size * scale;
         return (
           <div
             key={item.name}
@@ -83,7 +87,7 @@ function OrbitRing({
             style={{
               top: "50%",
               left: "50%",
-              transform: `rotate(${angle}deg) translateX(${radius}px) translateY(-50%)`,
+              transform: `rotate(${angle}deg) translateX(${r}px) translateY(-50%)`,
               transformOrigin: "0 0",
             }}
           >
@@ -91,14 +95,14 @@ function OrbitRing({
               {item.emoji ? (
                 <span
                   className="block select-none"
-                  style={{ fontSize: item.size * 0.7, lineHeight: 1 }}
+                  style={{ fontSize: s * 0.7, lineHeight: 1 }}
                 >
                   {item.emoji}
                 </span>
               ) : (
                 <div
                   className="rounded-full border border-border/50 bg-surface-card p-0.5 hover:border-primary/50 transition-colors overflow-hidden"
-                  style={{ width: item.size, height: item.size }}
+                  style={{ width: s, height: s }}
                 >
                   <img
                     src={item.image}
