@@ -13,53 +13,69 @@ import orbitApe from "@/assets/orbit-ape.png";
 import orbitPenguin from "@/assets/orbit-penguin.png";
 import orbitBlob from "@/assets/orbit-blob.png";
 import orbitCrying from "@/assets/orbit-crying.png";
+import memeDoge from "@/assets/meme-doge.png";
+import memePepe from "@/assets/meme-pepe.png";
+import memeFloki from "@/assets/meme-floki.png";
+import memeBonk2 from "@/assets/meme-bonk2.png";
+import memeWif from "@/assets/meme-wif.png";
+import memePopcat from "@/assets/meme-popcat.png";
+import memeBrett from "@/assets/meme-brett.png";
+import memeMog from "@/assets/meme-mog.png";
 
-type OrbitItem = { name: string; image?: string; emoji?: string; size: number };
+type OrbitItem = { name: string; image: string; size: number };
 
 const outerOrbit: OrbitItem[] = [
   { name: "SHIB", image: orbitShib, size: 58 },
-  { name: "😂", emoji: "😂", size: 28 },
+  { name: "DOGE", image: memeDoge, size: 50 },
   { name: "FOREST", image: orbitForest, size: 42 },
-  { name: "🤣", emoji: "🤣", size: 50 },
+  { name: "PEPE", image: memePepe, size: 56 },
   { name: "FIGHT", image: orbitFight, size: 62 },
-  { name: "😭", emoji: "😭", size: 32 },
+  { name: "WIF", image: memeWif, size: 48 },
   { name: "TURTLE", image: orbitTurtle, size: 38 },
-  { name: "💀", emoji: "💀", size: 54 },
-  { name: "DOGE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/5slq9p38_Doge-Meme-PNG-Free-Download.png", size: 50 },
-  { name: "🫠", emoji: "🫠", size: 26 },
-  { name: "PEPE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/bxzig1oh_png-clipart-discord-pepe-the-frog-video-games-pepe-removebg-preview.png", size: 54 },
-  { name: "😤", emoji: "😤", size: 44 },
+  { name: "FLOKI", image: memeFloki, size: 52 },
+  { name: "BONK2", image: memeBonk2, size: 44 },
+  { name: "POPCAT", image: memePopcat, size: 50 },
+  { name: "BRETT", image: memeBrett, size: 46 },
+  { name: "MOG", image: memeMog, size: 54 },
+  { name: "APE-O", image: orbitApe, size: 40 },
+  { name: "BLOB-O", image: orbitBlob, size: 36 },
 ];
 
 const middleOrbit: OrbitItem[] = [
   { name: "APE", image: orbitApe, size: 52 },
-  { name: "🔥", emoji: "🔥", size: 24 },
   { name: "PENGUIN", image: orbitPenguin, size: 44 },
-  { name: "😈", emoji: "😈", size: 48 },
+  { name: "DOGE2", image: memeDoge, size: 38 },
   { name: "BLOB", image: orbitBlob, size: 56 },
-  { name: "🚀", emoji: "🚀", size: 30 },
   { name: "CRY", image: orbitCrying, size: 40 },
-  { name: "🤡", emoji: "🤡", size: 46 },
+  { name: "PEPE2", image: memePepe, size: 48 },
   { name: "BONK", image: orbitBonk, size: 34 },
-  { name: "💎", emoji: "💎", size: 28 },
+  { name: "FLOKI2", image: memeFloki, size: 42 },
+  { name: "WIF2", image: memeWif, size: 46 },
+  { name: "POPCAT2", image: memePopcat, size: 36 },
+  { name: "SHIB2", image: orbitShib, size: 50 },
+  { name: "MOG2", image: memeMog, size: 44 },
 ];
 
 const innerOrbit: OrbitItem[] = [
   { name: "FAP", image: orbitFap, size: 48 },
-  { name: "🧠", emoji: "🧠", size: 26 },
-  { name: "SHIB2", image: orbitShib, size: 38 },
-  { name: "😵‍💫", emoji: "😵‍💫", size: 42 },
+  { name: "BRETT2", image: memeBrett, size: 38 },
   { name: "FIGHT2", image: orbitFight, size: 44 },
-  { name: "🤯", emoji: "🤯", size: 30 },
-  { name: "🐸", emoji: "🐸", size: 50 },
+  { name: "DOGE3", image: memeDoge, size: 42 },
+  { name: "BONK3", image: memeBonk2, size: 36 },
+  { name: "PEPE3", image: memePepe, size: 50 },
+  { name: "TURTLE2", image: orbitTurtle, size: 40 },
+  { name: "FOREST2", image: orbitForest, size: 34 },
+  { name: "FLOKI3", image: memeFloki, size: 46 },
 ];
 
 const microOrbit: OrbitItem[] = [
-  { name: "😎", emoji: "😎", size: 36 },
-  { name: "APE2", image: orbitApe, size: 28 },
-  { name: "🤑", emoji: "🤑", size: 42 },
-  { name: "💩", emoji: "💩", size: 24 },
+  { name: "APE2", image: orbitApe, size: 36 },
+  { name: "WIF3", image: memeWif, size: 30 },
   { name: "BLOB2", image: orbitBlob, size: 34 },
+  { name: "MOG3", image: memeMog, size: 28 },
+  { name: "CRY2", image: orbitCrying, size: 32 },
+  { name: "POPCAT3", image: memePopcat, size: 26 },
+  { name: "SHIB3", image: orbitShib, size: 30 },
 ];
 
 function OrbitRing({
@@ -93,25 +109,17 @@ function OrbitRing({
             }}
           >
             <div className={counterClass}>
-              {item.emoji ? (
-                <span
-                  className="block select-none"
-                  style={{ fontSize: s * 0.7, lineHeight: 1 }}
-                >
-                  {item.emoji}
-                </span>
-              ) : (
-                <div
-                  className="rounded-full border border-border/50 bg-surface-card p-0.5 hover:border-primary/50 transition-colors overflow-hidden"
-                  style={{ width: s, height: s }}
-                >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-              )}
+              <div
+                className="rounded-full border border-border/40 bg-surface-card/80 p-0.5 hover:border-primary/50 transition-colors overflow-hidden backdrop-blur-sm"
+                style={{ width: s, height: s }}
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover rounded-full"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         );
@@ -143,7 +151,7 @@ function CopyCA() {
 
 export function HeroSection() {
   const isMobile = useIsMobile();
-  const s = isMobile ? 0.55 : 1;
+  const s = isMobile ? 0.5 : 1;
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg scanlines pt-20">
@@ -154,17 +162,17 @@ export function HeroSection() {
       </div>
 
       {/* Orbit system */}
-      <div className="relative flex items-center justify-center" style={{ width: 650 * s, height: 650 * s }}>
+      <div className="relative flex items-center justify-center" style={{ width: 700 * s, height: 700 * s }}>
         {/* Orbit ring guides */}
-        <div className="absolute border border-border/15 rounded-full" style={{ width: 600 * s, height: 600 * s }} />
-        <div className="absolute border border-neon-green/8 rounded-full" style={{ width: 440 * s, height: 440 * s }} />
-        <div className="absolute border border-neon-cyan/8 rounded-full" style={{ width: 300 * s, height: 300 * s }} />
-        <div className="absolute border border-accent/8 rounded-full" style={{ width: 180 * s, height: 180 * s }} />
+        <div className="absolute border border-border/10 rounded-full" style={{ width: 640 * s, height: 640 * s }} />
+        <div className="absolute border border-neon-green/6 rounded-full" style={{ width: 480 * s, height: 480 * s }} />
+        <div className="absolute border border-neon-cyan/6 rounded-full" style={{ width: 330 * s, height: 330 * s }} />
+        <div className="absolute border border-accent/6 rounded-full" style={{ width: 200 * s, height: 200 * s }} />
 
-        <OrbitRing items={outerOrbit} radius={300} scale={s} className="spin-orbit" counterClass="counter-spin" />
-        <OrbitRing items={middleOrbit} radius={220} scale={s} className="spin-orbit-reverse" counterClass="counter-spin-reverse" />
-        <OrbitRing items={innerOrbit} radius={150} scale={s} className="spin-orbit-inner" counterClass="counter-spin-inner" />
-        <OrbitRing items={microOrbit} radius={90} scale={s} className="spin-orbit-micro" counterClass="counter-spin-micro" />
+        <OrbitRing items={outerOrbit} radius={320} scale={s} className="spin-orbit" counterClass="counter-spin" />
+        <OrbitRing items={middleOrbit} radius={240} scale={s} className="spin-orbit-reverse" counterClass="counter-spin-reverse" />
+        <OrbitRing items={innerOrbit} radius={165} scale={s} className="spin-orbit-inner" counterClass="counter-spin-inner" />
+        <OrbitRing items={microOrbit} radius={100} scale={s} className="spin-orbit-micro" counterClass="counter-spin-micro" />
 
         {/* Center emoji */}
         <motion.div
@@ -174,7 +182,7 @@ export function HeroSection() {
         >
           <div className="relative">
             <div className="absolute inset-0 bg-neon-green/20 blur-3xl scale-150" />
-            <img src={thinkEmoji} alt="$THINK" className={`relative object-contain glow-pulse ${isMobile ? 'w-28 h-28' : 'w-44 h-44'}`} />
+            <img src={thinkEmoji} alt="$THINK" className={`relative object-contain glow-pulse ${isMobile ? 'w-24 h-24' : 'w-44 h-44'}`} />
           </div>
         </motion.div>
       </div>
