@@ -120,6 +120,27 @@ function OrbitRing({
   );
 }
 
+const CA_ADDRESS = "SOON";
+
+function CopyCA() {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(CA_ADDRESS);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <button
+      onClick={handleCopy}
+      className="inline-flex items-center gap-2 px-4 py-2 mb-4 border border-border bg-surface-card hover:border-primary/40 transition-colors font-mono text-xs text-muted-foreground hover:text-primary cursor-pointer"
+    >
+      <span className="text-primary font-bold">CA:</span>
+      <span className="truncate max-w-[180px] md:max-w-none">{CA_ADDRESS}</span>
+      {copied ? <Check size={14} className="text-primary shrink-0" /> : <Copy size={14} className="shrink-0" />}
+    </button>
+  );
+}
+
 export function HeroSection() {
   const isMobile = useIsMobile();
   const s = isMobile ? 0.55 : 1;
