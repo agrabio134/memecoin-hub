@@ -1,14 +1,29 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Zap } from "lucide-react";
 import thinkEmoji from "@/assets/think-emoji.png";
+import orbitShib from "@/assets/orbit-shib.png";
+import orbitForest from "@/assets/orbit-forest.png";
+import orbitFight from "@/assets/orbit-fight.png";
+import orbitTurtle from "@/assets/orbit-turtle.png";
+import orbitFap from "@/assets/orbit-fap.png";
+import orbitBonk from "@/assets/orbit-bonk.png";
+import orbitApe from "@/assets/orbit-ape.png";
+import orbitPenguin from "@/assets/orbit-penguin.png";
 
-const memeTokens = [
+const outerOrbit = [
+  { name: "SHIB", image: orbitShib },
+  { name: "FOREST", image: orbitForest },
+  { name: "FIGHT", image: orbitFight },
+  { name: "TURTLE", image: orbitTurtle },
+  { name: "FAP", image: orbitFap },
+  { name: "BONK2", image: orbitBonk },
+];
+
+const innerOrbit = [
+  { name: "APE", image: orbitApe },
+  { name: "PENGUIN", image: orbitPenguin },
   { name: "DOGE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/5slq9p38_Doge-Meme-PNG-Free-Download.png" },
   { name: "PEPE", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/bxzig1oh_png-clipart-discord-pepe-the-frog-video-games-pepe-removebg-preview.png" },
-  { name: "WIF", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/h4qevga2_65a8eb9ea5c2150001c084c6_WIF%20logo.png" },
-  { name: "WOJAK", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/0j6q9sla_image.png" },
-  { name: "TROLL", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/f44lg4go_Trollface-Meme-PNG-Picture.png" },
-  { name: "BONK", image: "https://customer-assets.emergentagent.com/job_you-meme-solana/artifacts/wf7p6vb3_89e67b8b8a36d9f4386af358b7d9fe9e.png" },
 ];
 
 export function HeroSection() {
@@ -28,8 +43,8 @@ export function HeroSection() {
 
         {/* Outer orbit tokens */}
         <div className="spin-orbit absolute w-[420px] h-[420px]">
-          {memeTokens.slice(0, 4).map((meme, i) => {
-            const angle = (i / 4) * 360;
+          {outerOrbit.map((meme, i) => {
+            const angle = (i / outerOrbit.length) * 360;
             return (
               <div
                 key={meme.name}
@@ -42,8 +57,8 @@ export function HeroSection() {
                 }}
               >
                 <div className="counter-spin">
-                  <div className="w-12 h-12 border border-border/50 bg-surface-card p-1.5 hover:border-primary/50 transition-colors">
-                    <img src={meme.image} alt={meme.name} className="w-full h-full object-contain" />
+                  <div className="w-12 h-12 rounded-full border border-border/50 bg-surface-card p-1 hover:border-primary/50 transition-colors overflow-hidden">
+                    <img src={meme.image} alt={meme.name} className="w-full h-full object-cover rounded-full" />
                   </div>
                 </div>
               </div>
@@ -53,8 +68,8 @@ export function HeroSection() {
 
         {/* Inner orbit tokens */}
         <div className="spin-orbit-reverse absolute w-[300px] h-[300px]">
-          {memeTokens.slice(4).map((meme, i) => {
-            const angle = (i / 2) * 360;
+          {innerOrbit.map((meme, i) => {
+            const angle = (i / innerOrbit.length) * 360;
             return (
               <div
                 key={meme.name}
@@ -67,8 +82,8 @@ export function HeroSection() {
                 }}
               >
                 <div className="counter-spin-reverse">
-                  <div className="w-9 h-9 border border-border/30 bg-surface-card p-1 hover:border-neon-cyan/50 transition-colors">
-                    <img src={meme.image} alt={meme.name} className="w-full h-full object-contain" />
+                  <div className="w-9 h-9 rounded-full border border-border/30 bg-surface-card p-0.5 hover:border-neon-cyan/50 transition-colors overflow-hidden">
+                    <img src={meme.image} alt={meme.name} className="w-full h-full object-cover rounded-full" />
                   </div>
                 </div>
               </div>
