@@ -165,13 +165,13 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/30 bg-primary/5 text-primary text-xs font-mono uppercase tracking-[0.2em] mb-6">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/30 bg-surface-card text-primary text-xs font-mono uppercase tracking-[0.2em] mb-6">
           <span className="w-1.5 h-1.5 bg-primary animate-pulse" />
           Live on Solana
         </div>
 
         <h1
-          className="glitch-text text-7xl md:text-9xl font-heading font-extrabold tracking-tighter leading-none mb-4"
+          className="glitch-text text-5xl md:text-9xl font-heading font-extrabold tracking-tighter leading-none mb-4"
           data-text="$THINK"
           style={{
             background: "var(--gradient-text)",
@@ -182,10 +182,12 @@ export function HeroSection() {
           $THINK
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-2">
+        <CopyCA />
+
+        <p className="text-base md:text-xl text-muted-foreground mb-2">
           Let me <span className="text-primary font-bold">$THINK</span> about it...
         </p>
-        <p className="text-sm text-muted-foreground/50 font-mono mb-10">
+        <p className="text-xs md:text-sm text-muted-foreground/50 font-mono mb-10">
           // because aping blindly is so last cycle
         </p>
 
