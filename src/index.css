@@ -110,31 +110,55 @@
   100% { transform: translateY(40px); }
 }
 
-@keyframes wobble-x {
-  0%, 100% { transform: scaleX(1) scaleY(1); }
-  50% { transform: scaleX(1.08) scaleY(0.94); }
+@keyframes wobble-ellipse {
+  0%, 100% { transform: scaleX(1) scaleY(1) rotate(0deg); }
+  25% { transform: scaleX(1.06) scaleY(0.95) rotate(0.5deg); }
+  50% { transform: scaleX(0.96) scaleY(1.05) rotate(-0.5deg); }
+  75% { transform: scaleX(1.04) scaleY(0.97) rotate(0.3deg); }
 }
 
-@keyframes wobble-x-reverse {
-  0%, 100% { transform: scaleX(1) scaleY(1); }
-  50% { transform: scaleX(0.94) scaleY(1.06); }
+@keyframes wobble-ellipse-reverse {
+  0%, 100% { transform: scaleX(1) scaleY(1) rotate(0deg); }
+  25% { transform: scaleX(0.95) scaleY(1.04) rotate(-0.4deg); }
+  50% { transform: scaleX(1.05) scaleY(0.96) rotate(0.4deg); }
+  75% { transform: scaleX(0.97) scaleY(1.03) rotate(-0.3deg); }
 }
 
 @keyframes breathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+  50% { transform: scale(1.07); }
 }
 
-@keyframes drift-y {
-  0%, 100% { transform: translateY(0) translateX(0); }
-  25% { transform: translateY(-6px) translateX(3px); }
-  75% { transform: translateY(6px) translateX(-3px); }
+@keyframes breathe-small {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.94); }
 }
 
-@keyframes drift-y-reverse {
+@keyframes drift-orbit {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+  20% { transform: translateY(-8px) translateX(5px) rotate(0.5deg); }
+  40% { transform: translateY(4px) translateX(-6px) rotate(-0.3deg); }
+  60% { transform: translateY(-3px) translateX(8px) rotate(0.4deg); }
+  80% { transform: translateY(7px) translateX(-4px) rotate(-0.5deg); }
+}
+
+@keyframes drift-orbit-reverse {
   0%, 100% { transform: translateY(0) translateX(0); }
-  25% { transform: translateY(4px) translateX(-2px); }
-  75% { transform: translateY(-4px) translateX(2px); }
+  25% { transform: translateY(5px) translateX(-3px); }
+  50% { transform: translateY(-6px) translateX(4px); }
+  75% { transform: translateY(3px) translateX(-5px); }
+}
+
+@keyframes tilt-sway {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  33% { transform: rotate(1.5deg) scale(1.02); }
+  66% { transform: rotate(-1.5deg) scale(0.98); }
+}
+
+@keyframes tilt-sway-reverse {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  33% { transform: rotate(-1deg) scale(0.98); }
+  66% { transform: rotate(1deg) scale(1.02); }
 }
 
 @keyframes glitch-1 {
