@@ -128,7 +128,7 @@ function OrbitRing({
   );
 }
 
-const CA_ADDRESS = "SOON";
+const CA_ADDRESS = "EjUW3rz6HsPityrCqhkxYAsWA87Uz9xutqXh8uA4pump";
 
 function CopyCA() {
   const [copied, setCopied] = useState(false);

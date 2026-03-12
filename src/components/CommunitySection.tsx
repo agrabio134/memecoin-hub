@@ -25,7 +25,7 @@ export function CommunitySection() {
           <p className="text-muted-foreground mt-4 text-lg">Great minds think alike. Join thousands of $THINKers.</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-3 max-w-md mx-auto">
           {links.map((l, i) => (
             <motion.a
               key={l.name}
