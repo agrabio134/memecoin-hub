@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Twitter, Send, BarChart3, ExternalLink } from "lucide-react";
+import { Twitter, BarChart3, ExternalLink } from "lucide-react";
 
 export function CommunitySection() {
   const links = [
