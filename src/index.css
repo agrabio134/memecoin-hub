@@ -110,6 +110,33 @@
   100% { transform: translateY(40px); }
 }
 
+@keyframes wobble-x {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  50% { transform: scaleX(1.08) scaleY(0.94); }
+}
+
+@keyframes wobble-x-reverse {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  50% { transform: scaleX(0.94) scaleY(1.06); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes drift-y {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-6px) translateX(3px); }
+  75% { transform: translateY(6px) translateX(-3px); }
+}
+
+@keyframes drift-y-reverse {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(4px) translateX(-2px); }
+  75% { transform: translateY(-4px) translateX(2px); }
+}
+
 @keyframes glitch-1 {
   0%, 100% { clip-path: inset(0 0 95% 0); transform: translateX(0); }
   20% { clip-path: inset(30% 0 40% 0); transform: translateX(-3px); }
@@ -122,36 +149,36 @@
   animation: marquee 25s linear infinite;
 }
 
+/* Orbit 1: slow steady spin */
 .spin-orbit {
-  animation: spin-slow 30s linear infinite;
+  animation: spin-slow 35s linear infinite;
 }
-
-.spin-orbit-reverse {
-  animation: spin-reverse 25s linear infinite;
-}
-
 .counter-spin {
-  animation: spin-reverse 30s linear infinite;
+  animation: spin-reverse 35s linear infinite;
 }
 
+/* Orbit 2: reverse with elliptical wobble */
+.spin-orbit-reverse {
+  animation: spin-reverse 28s linear infinite, wobble-x 8s ease-in-out infinite;
+}
 .counter-spin-reverse {
-  animation: spin-slow 25s linear infinite;
+  animation: spin-slow 28s linear infinite, wobble-x-reverse 8s ease-in-out infinite;
 }
 
+/* Orbit 3: faster with breathing scale */
 .spin-orbit-inner {
-  animation: spin-slow 20s linear infinite;
+  animation: spin-slow 18s linear infinite, breathe 6s ease-in-out infinite;
 }
-
 .counter-spin-inner {
-  animation: spin-reverse 20s linear infinite;
+  animation: spin-reverse 18s linear infinite;
 }
 
+/* Orbit 4: fast reverse with drift */
 .spin-orbit-micro {
-  animation: spin-reverse 15s linear infinite;
+  animation: spin-reverse 12s linear infinite, drift-y 5s ease-in-out infinite;
 }
-
 .counter-spin-micro {
-  animation: spin-slow 15s linear infinite;
+  animation: spin-slow 12s linear infinite, drift-y-reverse 5s ease-in-out infinite;
 }
 
 .glow-pulse {
