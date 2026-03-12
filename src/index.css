@@ -138,6 +138,14 @@
   animation: spin-slow 25s linear infinite;
 }
 
+.spin-orbit-inner {
+  animation: spin-slow 20s linear infinite;
+}
+
+.counter-spin-inner {
+  animation: spin-reverse 20s linear infinite;
+}
+
 .glow-pulse {
   animation: pulse-glow 3s ease-in-out infinite;
 }
